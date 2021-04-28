@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package paquete2;
 
 /**
@@ -14,12 +9,18 @@ public class Hospital {
     private String ciudad;
     private int numeroDoctores;
     private int numeroEnfermeros;
-    
     /*
         Crear un constructor que reciba como parámetros
         valores que serán asignados a los atributos.
     
     */
+    public Hospital (String nombr, String ciuda, int numeroDoctore, int numeroEnfermero){
+
+         nombre= nombr;
+         ciudad= ciuda;
+         numeroDoctores = numeroDoctore;
+         numeroEnfermeros= numeroEnfermero;
+    }
     
     public void establecerNombre(String n){
         nombre = n;
@@ -52,5 +53,13 @@ public class Hospital {
     public int obtenerNumeroEnfermeros(){
         return numeroEnfermeros;
     }
-    
+    public String toString(){
+        String cadena = String.format("Los datos del hospital son\n"
+                + "Nombre: %s\n"
+                + "Ciudad: %s\n"
+                + "Numero de Doctores: %s\n"
+                + "Numero de Enfermos %s\n",obtenerNombre(),
+                obtenerCiudad(), obtenerNumeroDoctores(), obtenerNumeroEnfermeros());
+        return cadena;
+    }
 }
